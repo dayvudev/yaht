@@ -1,0 +1,7 @@
+<?php
+
+require getcwd() . '/vendor/autoload.php';
+
+use Dayvu\Source\Classes\Processor;
+
+(new Processor())->proceed();

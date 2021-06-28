@@ -1,0 +1,23 @@
+<?php
+
+require getcwd() . '/vendor/autoload.php';
+
+if (! file_exists(CONFIG_DIR)) {
+    mkdir(CONFIG_DIR);
+}
+
+if (! file_exists(RESULT_DIR)) {
+    mkdir(RESULT_DIR);
+}
+
+if (! file_exists(BODY_CONFIG_PATH)) {
+    touch(BODY_CONFIG_PATH);
+}
+
+if (! file_exists(HEAD_CONFIG_PATH)) {
+    touch(HEAD_CONFIG_PATH);
+}
+
+if (! file_exists(RESULT_DIRECTION)) {
+    touch(RESULT_DIRECTION);
+}

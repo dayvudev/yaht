@@ -1,0 +1,29 @@
+{
+    "name": "dayvu/yaht",
+    "description": "Utility for writing web pages in 'YAML' and converting them to 'HTML'.",
+    "version": "v1.0.0-dev",
+    "type": "library",
+    "keywords": ["yaml", "html", "lifebalance"],
+    "homepage": "https://github.com/dayvudev",
+    "time": "2021-06-28",
+    "authors": [
+        {
+            "name": "Dawid Zastawny",
+            "email": "davide.zastawny@gmail.com",
+            "homepage": "https://github.com/dayvudev",
+            "role": "Software Developer"
+        }
+    ],
+    "require": {
+        "ext-yaml": "*"
+    },
+    "autoload": {
+        "files": [
+            "bin/define.php"
+        ],
+        "psr-4": {
+            "Dayvu\\Source\\": "./src"
+        }
+    },
+    "bin": ["bin/init", "bin/run"]
+}

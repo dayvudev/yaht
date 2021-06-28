@@ -1,0 +1,41 @@
+- e: table
+  a: 'border="1" cellspacing="0" cellpadding="10" style="margin: 0px auto"'
+  c:
+    - e: thead
+      c:
+        - e: tr
+          c:
+            - e: 'th|Raport danych'
+              a: 'colspan="4"'
+        - e: tr
+          c:
+            - e: 'th|Dana 1'
+            - e: 'th|Dana 2'
+            - e: 'th|Dana 3'
+            - e: 'th|Dana 4'
+    - e: tbody
+      c:
+        - e: tr
+          c:
+            - e: 'td|Wartość 1'
+            - e: 'td|Wartość 2'
+            - e: 'td|Wartość 3'
+            - e: 'td|Wartość 4'
+        - e: tr
+          c:
+            - e: 'td|Wartość 5'
+            - e: 'td|Wartość 6'
+            - e: 'td|Wartość 7'
+            - e: 'td|Wartość 8'
+        - e: tr
+          c:
+            - e: 'td|Wartość 9'
+            - e: 'td|Wartość 10'
+            - e: 'td|Wartość 11'
+            - e: 'td|Wartość 12'
+    - e: tfoot
+      c:
+        - e: tr
+          c:
+            - e: 'td|1 stycznia 1972'
+              a: 'colspan="4" style="text-align: center"'
