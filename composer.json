@@ -6,14 +6,12 @@
     "keywords": ["yaml", "html", "lifebalance"],
     "homepage": "https://github.com/dayvudev",
     "time": "2021-06-28",
-    "authors": [
-        {
-            "name": "Dawid Zastawny",
-            "email": "davide.zastawny@gmail.com",
-            "homepage": "https://github.com/dayvudev",
-            "role": "Software Developer"
-        }
-    ],
+    "authors": [{
+        "name": "Dawid Zastawny",
+        "email": "davide.zastawny@gmail.com",
+        "homepage": "https://github.com/dayvudev",
+        "role": "Software Developer"
+    }],
     "require": {
         "ext-yaml": "*"
     },
