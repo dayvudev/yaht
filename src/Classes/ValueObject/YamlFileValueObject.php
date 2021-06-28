@@ -29,6 +29,8 @@ class YamlFileValueObject extends ResourceValueObject implements YamlFileValueOb
      */
     public function getArray(): array
     {
-        return yaml_parse($this->getContent());
+        $parsedValue = yaml_parse($this->getContent());
+
+        return ! is_array($parsedValue) ? [] : $parsedValue;
     }
 }
