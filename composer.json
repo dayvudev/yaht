@@ -1,5 +1,5 @@
 {
-    "name": "dayvu/yaht",
+    "name": "dayvudev/yaht",
     "description": "Utility for writing web pages in 'YAML' and converting them to 'HTML'.",
     "version": "v1.0.0-dev",
     "type": "library",
