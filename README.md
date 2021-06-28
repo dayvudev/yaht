@@ -3,15 +3,16 @@ Utility for writing web pages in 'YAML' and converting them to 'HTML'.
 
 # Instalation
 ### Composer
-Run `composer require dayvudev/yath`
+1. Run `composer config repositories.dayvudev/yaht vcs git@github.com:dayvudev/yaht.git`
+1. Run `composer require dayvudev/yaht:v1.0.0-dev`
 ### Linux Terminal
-Run `composer install && bin/init`
+1. Run `composer install && bin/init`
 ### Windows Powershell
-Run `composer install; bin/init.bat`
+1. Run `composer install; bin/init.bat`
 
 # Configuration
-See example in `vendor/dayvu/yaht/config/head.yaml` and `vendor/dayvu/yaht/config/body.yaml`
+1. See example in `vendor/dayvu/yaht/config/head.yaml` and `vendor/dayvu/yaht/config/body.yaml`
 
 # Usage
-Run `bin/run`
-Open file `result/result.html` in a web browser.
+1. Run `bin/run`
+1. Open file `result/result.html` in a web browser.
