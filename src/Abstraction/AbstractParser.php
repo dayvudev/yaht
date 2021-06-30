@@ -103,7 +103,7 @@ abstract class AbstractParser implements ParserInterface
                 new StringValueObject($a)
             );
 
-            $max = $e[2] ?? 1;
+            $max = $explodedElementString[2] ?? 1;
             for ($i = 1; $i <= $max; $i++) {
                 array_push($elements, $element);
             }
