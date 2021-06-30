@@ -1,7 +1,6 @@
 <?php namespace Dayvu\Source\Abstraction;
 
 use Dayvu\Source\Interfaces\ValueObjectInterface;
-use Exception;
 
 abstract class AbstractValueObject implements ValueObjectInterface
 {

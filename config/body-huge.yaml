@@ -1,0 +1,18 @@
+- e: 'table||1000'
+  a: 'border="1" width="100%" cellspacing="0" cellpadding="10" style="margin: 20px auto"'
+  c:
+    - e: thead
+      c:
+        - e: 'tr||1000'
+          c:
+            - e: 'td|Dayvu\Source\Classes\ElementProvider|1000'
+    - e: tbody
+      c:
+        - e: 'tr||1000'
+          c:
+            - e: 'td|Tbody value|1000'
+    - e: tfoot
+      c:
+        - e: 'tr||1000'
+          c:
+            - e: 'td|Tfoot value|1000'

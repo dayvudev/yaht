@@ -9,11 +9,15 @@ if (! defined('RESULT_DIR')) {
 }
 
 if (! defined('BODY_CONFIG_PATH')) {
-    define('BODY_CONFIG_PATH', CONFIG_DIR . '/body.yaml');
+    define('BODY_CONFIG_PATH', CONFIG_DIR . '/body-huge.yaml');
 }
 
 if (! defined('HEAD_CONFIG_PATH')) {
     define('HEAD_CONFIG_PATH', CONFIG_DIR . '/head.yaml');
+}
+
+if (! defined('PROVIDER_CONFIG_PATH')) {
+    define('PROVIDER_CONFIG_PATH', CONFIG_DIR . '/provider.yaml');
 }
 
 if (! defined('RESULT_DIRECTION')) {

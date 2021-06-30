@@ -11,8 +11,10 @@ use Dayvu\Source\Classes\ValueObject\StringValueObject;
 use Dayvu\Source\Interfaces\ConfigInterface;
 use Dayvu\Source\Interfaces\Element\HtmlInterface;
 use Dayvu\Source\Interfaces\ElementInterface;
+use Dayvu\Source\Interfaces\ElementProviderInterface;
 use Dayvu\Source\Interfaces\ParserInterface;
-use Dayvu\Source\Interfaces\ValueObject\IterableValueObjectInterface;
+use Dayvu\Source\Interfaces\ValueObject\StringableValueObjectInterface;
+use Exception;
 
 abstract class AbstractParser implements ParserInterface
 {
@@ -90,19 +92,57 @@ abstract class AbstractParser implements ParserInterface
             $e = explode('|', $e);
             $a = $configRow['a'] ?? '';
 
-            $tag = $e[0];
-            $content = $e[1] ?? null;
-
             $element = new BaseElement(
-                new StringValueObject($tag),
-                null === $content ? new NullValueObject() : new StringValueObject($content),
+                $this->getTagFromElementString($e),
+                $this->getContentFromElementString($e),
                 $this->parseLevel($configRow['c'] ?? []),
                 new StringValueObject($a)
             );
 
-            array_push($elements, $element);
+            $max = $e[2] ?? 1;
+            for ($i = 1; $i <= $max; $i++) {
+                array_push($elements, $element);
+            }
         }
 
         return new ElementsValueObject($elements);
+    }
+
+
+    private function getTagFromElementString(array $explodedElementString): NullValueObject|StringableValueObjectInterface
+    {
+        $tag = $explodedElementString[0] ?? null;
+
+        if (null === $tag) {
+            throw new Exception('Tag is required!');
+        }
+
+        return new StringValueObject((string) $tag);
+    }
+
+    private function getContentFromElementString(array $explodedElementString): NullValueObject|StringableValueObjectInterface
+    {
+        $content = $explodedElementString[1] ?? null;
+
+        if (null === $content) {
+            return new NullValueObject();
+        }
+
+        if (class_exists($content)) {
+            return $this->getElementProvider($content)->provideContent();
+        }
+        
+        return new StringValueObject((string) $content);
+    }
+
+    private function getElementProvider(string $providerClass): ElementProviderInterface
+    {
+        $instance = new $providerClass();
+
+        if (! $instance instanceof ElementProviderInterface) {
+            throw new Exception('Content provider must implements: ' . ElementProviderInterface::class);
+        }
+
+        return $instance;
     }
 }

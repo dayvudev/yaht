@@ -12,7 +12,7 @@ class YamlFileValueObject extends ResourceValueObject implements YamlFileValueOb
         parent::init();
 
         if (! function_exists('yaml_parse')) {
-            throw new Exception('Required "php_yaml" extension is not loaded!');
+            throw new Exception('Required "php_yaml" extension is not loaded! Download it from: https://pecl.php.net/package/yaml');
         }
 
         $content = file_get_contents($this->getPath());

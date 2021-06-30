@@ -11,6 +11,7 @@ abstract class AbstractConfig implements ConfigInterface
 {
     private YamlFileValueObjectInterface $headConfig;
     private YamlFileValueObjectInterface $bodyConfig;
+    private YamlFileValueObjectInterface $providerConfig;
     private ResourceValueObjectInterface $resultDirection;
 
     public function __construct()
@@ -46,7 +47,7 @@ abstract class AbstractConfig implements ConfigInterface
     {
         return $this->bodyConfig;
     }
-
+    
     public function getResultDirection(): ResourceValueObjectInterface
     {
         return $this->resultDirection;

@@ -4,7 +4,6 @@ use Dayvu\Source\Abstraction\AbstractElement;
 use Dayvu\Source\Classes\ValueObject\ElementsValueObject;
 use Dayvu\Source\Classes\ValueObject\NullValueObject;
 use Dayvu\Source\Classes\ValueObject\StringValueObject;
-use Dayvu\Source\Definition\DictionaryInterface;
 use Dayvu\Source\Interfaces\Element\HeadInterface;
 
 class HeadElement extends AbstractElement implements HeadInterface
@@ -16,7 +15,7 @@ class HeadElement extends AbstractElement implements HeadInterface
         private ElementsValueObject $children
     ) {
         parent::__construct(
-            new StringValueObject(DictionaryInterface::TAG_NAME_HEAD),
+            new StringValueObject('head'),
             new NullValueObject(),
             $children,
             new StringValueObject('')

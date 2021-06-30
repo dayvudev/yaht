@@ -1,41 +1,18 @@
-- e: table
-  a: 'border="1" cellspacing="0" cellpadding="10" style="margin: 0px auto"'
+- e: 'table||10'
+  a: 'border="1" width="100%" cellspacing="0" cellpadding="10" style="margin: 20px auto"'
   c:
     - e: thead
       c:
-        - e: tr
+        - e: 'tr||10'
           c:
-            - e: 'th|Raport danych'
-              a: 'colspan="4"'
-        - e: tr
-          c:
-            - e: 'th|Dana 1'
-            - e: 'th|Dana 2'
-            - e: 'th|Dana 3'
-            - e: 'th|Dana 4'
+            - e: 'td|Dayvu\Source\Classes\ElementProvider|10'
     - e: tbody
       c:
-        - e: tr
+        - e: 'tr||10'
           c:
-            - e: 'td|Wartość 1'
-            - e: 'td|Wartość 2'
-            - e: 'td|Wartość 3'
-            - e: 'td|Wartość 4'
-        - e: tr
-          c:
-            - e: 'td|Wartość 5'
-            - e: 'td|Wartość 6'
-            - e: 'td|Wartość 7'
-            - e: 'td|Wartość 8'
-        - e: tr
-          c:
-            - e: 'td|Wartość 9'
-            - e: 'td|Wartość 10'
-            - e: 'td|Wartość 11'
-            - e: 'td|Wartość 12'
+            - e: 'td|Tbody value|10'
     - e: tfoot
       c:
-        - e: tr
+        - e: 'tr||10'
           c:
-            - e: 'td|1 stycznia 1972'
-              a: 'colspan="4" style="text-align: center"'
+            - e: 'td|Tfoot value|10'
