@@ -9,7 +9,7 @@ if (! defined('RESULT_DIR')) {
 }
 
 if (! defined('BODY_CONFIG_PATH')) {
-    define('BODY_CONFIG_PATH', CONFIG_DIR . '/body-huge.yaml');
+    define('BODY_CONFIG_PATH', CONFIG_DIR . '/body.yaml');
 }
 
 if (! defined('HEAD_CONFIG_PATH')) {
