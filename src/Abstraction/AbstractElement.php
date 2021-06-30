@@ -20,20 +20,20 @@ abstract class AbstractElement implements ElementInterface
      * @param ElementsValueObject<ElementInterface> $children
      */
     public function __construct(
-        private StringValueObject $tag,
-        private ValueObjectInterface $content,
+        private StringableValueObjectInterface $tag,
+        private StringableValueObjectInterface $content,
         private ElementsValueObject $children,
         private StringableValueObjectInterface $attributes
     ) {
         $this->uuid = uniqid('element-');
     }
 
-    public function getTag(): StringValueObject
+    public function getTag(): StringableValueObjectInterface
     {
         return $this->tag;
     }
     
-    public function getContent(): ValueObjectInterface
+    public function getContent(): StringableValueObjectInterface
     {
         return $this->content;
     }

@@ -6,8 +6,8 @@ use Stringable;
 
 interface ElementInterface extends Stringable
 {
-    public function getTag(): ValueObjectInterface;
-    public function getContent(): ValueObjectInterface;
+    public function getTag(): StringableValueObjectInterface;
+    public function getContent(): StringableValueObjectInterface;
     public function getAttributes(): StringableValueObjectInterface;
 
     /**

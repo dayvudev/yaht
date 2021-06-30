@@ -19,7 +19,7 @@ class HtmlElement extends AbstractElement implements HtmlInterface
     ) {
         parent::__construct(
             new StringValueObject('html'),
-            new NullValueObject,
+            new StringValueObject(''),
             new ElementsValueObject([$head, $body]),
             new StringValueObject('')
         );

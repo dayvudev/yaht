@@ -16,7 +16,7 @@ class HeadElement extends AbstractElement implements HeadInterface
     ) {
         parent::__construct(
             new StringValueObject('head'),
-            new NullValueObject(),
+            new StringValueObject(''),
             $children,
             new StringValueObject('')
         );

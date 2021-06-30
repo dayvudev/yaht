@@ -13,7 +13,7 @@ class BodyElement extends AbstractElement implements BodyInterface
     ) {
         parent::__construct(
             new StringValueObject('body'),
-            new NullValueObject(),
+            new StringValueObject(''),
             $children,
             new StringValueObject('')
         );

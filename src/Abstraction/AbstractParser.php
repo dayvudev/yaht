@@ -89,12 +89,16 @@ abstract class AbstractParser implements ParserInterface
         
         foreach ($config as $configRow) {
             $e = $configRow['e'] ?? '';
-            $e = explode('|', $e);
             $a = $configRow['a'] ?? '';
 
+            /**
+             * @var array<int, string> $explodedElementString
+             */
+            $explodedElementString = explode('|', $e);
+
             $element = new BaseElement(
-                $this->getTagFromElementString($e),
-                $this->getContentFromElementString($e),
+                $this->getTagFromElementString($explodedElementString),
+                $this->getContentFromElementString($explodedElementString),
                 $this->parseLevel($configRow['c'] ?? []),
                 new StringValueObject($a)
             );
@@ -108,8 +112,10 @@ abstract class AbstractParser implements ParserInterface
         return new ElementsValueObject($elements);
     }
 
-
-    private function getTagFromElementString(array $explodedElementString): NullValueObject|StringableValueObjectInterface
+    /**
+     * @param array<int, string> $explodedElementString
+     */
+    private function getTagFromElementString(array $explodedElementString): StringableValueObjectInterface
     {
         $tag = $explodedElementString[0] ?? null;
 
@@ -120,15 +126,14 @@ abstract class AbstractParser implements ParserInterface
         return new StringValueObject((string) $tag);
     }
 
-    private function getContentFromElementString(array $explodedElementString): NullValueObject|StringableValueObjectInterface
+    /**
+     * @param array<int, string> $explodedElementString
+     */
+    private function getContentFromElementString(array $explodedElementString): StringableValueObjectInterface
     {
         $content = $explodedElementString[1] ?? null;
 
-        if (null === $content) {
-            return new NullValueObject();
-        }
-
-        if (class_exists($content)) {
+        if (null !== $content && class_exists($content)) {
             return $this->getElementProvider($content)->provideContent();
         }
         
