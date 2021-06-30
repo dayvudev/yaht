@@ -17,7 +17,7 @@ class ResourceValueObject extends AbstractValueObject implements ResourceValueOb
     protected function init(): void
     {
         if (! $this->isValid()) {
-            throw new Exception('Provided path is not readable or doesn\'t exists');
+            throw new Exception('Path "' . $this->getPath() . '" is not readable or doesn\'t exists');
         }
     }
     

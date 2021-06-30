@@ -1,6 +1,6 @@
 <?php
 
-$userDefineFile = getcwd() . '/bin/user_init_set.php';
+$userDefineFile = getcwd() . '/bin/yaht_user_init_set.php';
 if (file_exists($userDefineFile)) {
     require_once $userDefineFile;
 } else {

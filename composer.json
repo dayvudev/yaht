@@ -18,12 +18,12 @@
     },
     "autoload": {
         "files": [
-            "bin/init_set.php",
-            "bin/define.php"
+            "bin/yaht_init_set.php",
+            "bin/yaht_define.php"
         ],
         "psr-4": {
             "Dayvu\\Source\\": "./src"
         }
     },
-    "bin": ["bin/init", "bin/run"]
+    "bin": ["bin/yaht_init", "bin/yaht_run"]
 }

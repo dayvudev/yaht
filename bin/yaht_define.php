@@ -1,6 +1,6 @@
 <?php
 
-$userDefineFile = getcwd() . '/bin/user_define.php';
+$userDefineFile = getcwd() . '/bin/yaht_user_define.php';
 if (file_exists($userDefineFile)) {
     require_once $userDefineFile;
 } else {
@@ -17,18 +17,14 @@ function defineData() {
     }
     
     if (! defined('BODY_CONFIG_PATH')) {
-        define('BODY_CONFIG_PATH', CONFIG_DIR . '/body.yaml');
+        define('BODY_CONFIG_PATH', CONFIG_DIR . '/yaht_body.yaml');
     }
     
     if (! defined('HEAD_CONFIG_PATH')) {
-        define('HEAD_CONFIG_PATH', CONFIG_DIR . '/head.yaml');
-    }
-    
-    if (! defined('PROVIDER_CONFIG_PATH')) {
-        define('PROVIDER_CONFIG_PATH', CONFIG_DIR . '/provider.yaml');
+        define('HEAD_CONFIG_PATH', CONFIG_DIR . '/yaht_head.yaml');
     }
     
     if (! defined('RESULT_DIRECTION')) {
-        define('RESULT_DIRECTION', RESULT_DIR . '/result.html');
+        define('RESULT_DIRECTION', RESULT_DIR . '/yaht_result.html');
     }
 }
